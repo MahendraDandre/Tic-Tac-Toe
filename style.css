@@ -11,14 +11,14 @@ body{
 }
  .container{
     width: 100%;
-    height: 100%;
+    height: 100%vh;
     display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
  }
  .container h1{
-    margin-bottom: 40px;
+    margin-bottom:20px 0 40px 0;
     text-decoration: underline;
  }
   .game-board{
@@ -37,6 +37,14 @@ align-items: center;
   height: 120px;
   cursor: pointer;
   }
+  .cell:first-child,
+  .cell:nth-child(2),
+  .cell:nth-child(3){
+    border-top:none;
+  }
+
+/*put values from 0. It works for n * 1, 2, 3 */
+
    .cell:first-child,.cell:nth-child(2), .cell:nth-child(3){
     border-top:none;
    }
@@ -57,12 +65,12 @@ align-items: center;
   justify-content: space-between;
   margin-top: 30px; 
 }
-.players{
+.player{
   margin-inline: 18px;
   font-size: 24px;
   font-weight: 600;
 }
-.restarBtn{
+.restartBtn{
   border: none;
 background:#5f5fc4;
 color:#fff;
@@ -74,8 +82,24 @@ border-radius: 4px;
 cursor: pointer;
 }
 
-.rastarBtn:hover {
+.rastartBtn:hover {
   background: #7272e1;
+}
+.cell.disabled{
+  background-color: #8c8c8c;
+}
+.alertBox{
+  position:absolute;
+  top: 0;
+  background-color: #dfdfdf;
+  color: #4d4d51;
+  width: 100%;
+  padding: 8px 12px;
+  font-size:20px;
+  font-weight:600;
+  height: 40px;
+  display:none;
+
 }
 @media screen and  (max-width:550px){ 
   .container h1{
